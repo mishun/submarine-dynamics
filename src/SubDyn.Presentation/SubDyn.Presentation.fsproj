@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{fec73236-7736-4029-9726-5a76a972b534}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SubDyn.Presentation</RootNamespace>
+    <AssemblyName>SubDyn.Presentation</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <Name>SubDyn.Presentation</Name>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <Tailcalls>false</Tailcalls>
+    <OutputPath>..\Bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <WarningLevel>3</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <Tailcalls>true</Tailcalls>
+    <OutputPath>..\Bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <WarningLevel>3</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="FSharp.Core" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IModelDataProvider.fs" />
+    <Compile Include="IWordDataProvider.fs" />
+    <Compile Include="IPlayablePausable.fs" />
+    <Compile Include="IHavingTimeScale.fs" />
+    <Compile Include="ScaleCanvas.fs" />
+    <Compile Include="TopView.fs" />
+    <Compile Include="SimulatorModelDataProvider.fs" />
+    <Compile Include="Simulator.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SubDyn.Core\SubDyn.Core.fsproj">
+      <Name>SubDyn.Core</Name>
+      <Project>{48856f50-f484-460c-bfb7-73e1ca24fe66}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\SubDyn.Math\SubDyn.Math.fsproj">
+      <Name>SubDyn.Math</Name>
+      <Project>{4ad7e177-b029-468f-9c10-00127acbdc6f}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\SubDyn.Simulator\SubDyn.Simulator.fsproj">
+      <Name>SubDyn.Simulator</Name>
+      <Project>{e2d337a2-f24e-4444-8a72-0dd2416d74b3}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\FSharp\1.0\Microsoft.FSharp.Targets" Condition="!Exists('$(MSBuildBinPath)\Microsoft.Build.Tasks.v4.0.dll')" />
+  <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft F#\v4.0\Microsoft.FSharp.Targets" Condition=" Exists('$(MSBuildBinPath)\Microsoft.Build.Tasks.v4.0.dll')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	     Other similar extension points exist, see Microsoft.Common.targets.
+	<Target Name="BeforeBuild">
+	</Target>
+	<Target Name="AfterBuild">
+	</Target>
+	-->
+</Project>

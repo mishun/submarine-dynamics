@@ -1,0 +1,119 @@
+﻿<Fluent:RibbonWindow
+    x:Class="SubDyn.App.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Fluent="clr-namespace:Fluent;assembly=Fluent"
+    xmlns:local="clr-namespace:SubDyn"
+    xmlns:localcontrols="clr-namespace:SubDyn.App.Controls"
+    xmlns:presentation="clr-namespace:SubDyn.Presentation.Controls;assembly=SubDyn.Presentation"
+    Title="Submarine Dynamics"
+    Width="640" Height="480"
+    MinWidth="640" MinHeight="480"
+    ResizeMode="CanResizeWithGrip"
+    SnapsToDevicePixels="True"
+    FlowDirection="LeftToRight"
+    WindowStartupLocation="CenterScreen"
+    WindowState="Maximized">
+
+    <Fluent:RibbonWindow.Resources>
+        <ResourceDictionary Source="pack://application:,,,/Fluent;Component/Themes/Office2010/Silver.xaml" />
+    </Fluent:RibbonWindow.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Fluent:Ribbon Name="ribbon" Grid.Row="0" AutomaticStateManagement="True" BackstageBrush="DodgerBlue">
+            <!--Основное меню-->
+            <Fluent:Ribbon.BackstageItems>
+                <Fluent:Button Text="Сохранить" Icon="/SubDyn.App;component/Resources/filesave16.png" />
+                <Fluent:Button Text="Сохранить как" Icon="/SubDyn.App;component/Resources/filesaveas16.png" />
+                <Fluent:Button Text="Открыть" Icon="/SubDyn.App;component/Resources/fileopen16.png" />
+                <Fluent:Button Text="Закрыть" Icon="/SubDyn.App;component/Resources/fileclose16.png" />
+                <Fluent:BackstageTabItem Header="Сведения" />
+                <Fluent:BackstageTabItem Header="Последние">
+                    <Fluent:BackstageTabControl Margin="20,5,20,5">
+                        <Fluent:GroupSeparatorMenuItem Text="Последние расчеты" FontWeight="Normal" />
+                        <TabItem Header="Расчет1" />
+                        <TabItem Header="Расчет2" />
+                        <TabItem Header="Расчет3" />
+                    </Fluent:BackstageTabControl>
+                </Fluent:BackstageTabItem>
+                <Fluent:BackstageTabItem Header="Печать" />
+                <Fluent:BackstageTabItem Header="Справка" />
+                <Fluent:Button Text="Параметры" Icon="/SubDyn.App;component/Resources/fileparameters16.png" />
+                <Fluent:Button Name="buttonExit"  Text="Выход" Icon="/SubDyn.App;component/Resources/filequit16.png" Click="buttonExit_Click" />
+            </Fluent:Ribbon.BackstageItems>
+            
+            <!--Кнопка помощи-->
+            <Fluent:Ribbon.ToolBarItems>
+                <Fluent:Button Size="Small" Icon="/SubDyn.App;component/Resources/filehelp16.png" />
+            </Fluent:Ribbon.ToolBarItems>
+
+            <!--Панель быстрого доступа-->
+            <Fluent:Ribbon.QuickAccessItems>
+                <Fluent:QuickAccessMenuItem>
+                    <Fluent:Button Text="Создать" Icon="/SubDyn.App;component/Resources/filecreate16.png" />
+                </Fluent:QuickAccessMenuItem>
+
+                <Fluent:QuickAccessMenuItem>
+                    <Fluent:Button Text="Открыть" Icon="/SubDyn.App;component/Resources/fileopen16.png" />
+                </Fluent:QuickAccessMenuItem>
+
+                <Fluent:QuickAccessMenuItem>
+                    <Fluent:Button Text="Сохранить" Icon="/SubDyn.App;component/Resources/filesave16.png" />
+                </Fluent:QuickAccessMenuItem>
+            </Fluent:Ribbon.QuickAccessItems>
+
+            <!--Создать-->
+            <Fluent:RibbonTabItem Header="Моделирование">
+                <Fluent:RibbonGroupBox Header="Подводный аппарат">
+                    <Fluent:Button Name="body" Text=" Корпус " Click="bodyEditor_Click" />
+                </Fluent:RibbonGroupBox>
+
+                <Fluent:RibbonGroupBox Header="">
+                    <Fluent:Button Name="buttonManoeuvre" Text=" Маневр " Click="buttonManoeuvre_Click" />
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+            
+            <!--Расчет-->
+            <Fluent:RibbonTabItem Header="Расчет">
+                <Fluent:RibbonGroupBox Header="Параметры">
+                    <Fluent:Button Name="settings" Text="Настройки" Click="settings_Click" />
+                </Fluent:RibbonGroupBox>
+
+            </Fluent:RibbonTabItem>
+
+            <!--Создать-->
+            <Fluent:RibbonTabItem Header="Результаты">
+                <Fluent:RibbonGroupBox Header="Графики">
+                    <Fluent:Button Name="buttonResultsTrajectory" Text="Траектория" Click="buttonResultsTrajectory_Click" />
+                </Fluent:RibbonGroupBox>
+
+                <Fluent:RibbonGroupBox Header="">
+                    <Fluent:Button Name="buttonSaveResults" Text="Сохранить" Click="buttonSaveResults_Click" />
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+        </Fluent:Ribbon>
+
+        <localcontrols:TopViewContainer x:Name="topView" Grid.Row="2" Margin="30,10" />
+            
+        <StatusBar Name="statusBar" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Bottom">
+            <StatusBarItem>
+            	<localcontrols:WorldTimeView x:Name="timeView" />
+            </StatusBarItem>
+            <StatusBarItem>
+                <localcontrols:PlayPauseButton x:Name="playPauseButton" HorizontalAlignment="Left" />
+            </StatusBarItem>
+            <StatusBarItem>
+                <localcontrols:StopButton x:Name="stopButton" Click="stopButton_click" HorizontalAlignment="Left" />
+            </StatusBarItem>
+            <StatusBarItem>
+                <localcontrols:TimeScaleBox x:Name="timeScaleBox" HorizontalAlignment="Left" />
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
+</Fluent:RibbonWindow>

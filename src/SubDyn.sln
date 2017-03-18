@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "SubDyn.Core", "SubDyn.Core\SubDyn.Core.fsproj", "{48856F50-F484-460C-BFB7-73E1CA24FE66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SubDyn.App", "SubDyn.App\SubDyn.App.csproj", "{79473582-E7D2-4153-BFD8-CA84A651B195}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FEC73236-7736-4029-9726-5A76A972B534} = {FEC73236-7736-4029-9726-5A76A972B534}
+		{48856F50-F484-460C-BFB7-73E1CA24FE66} = {48856F50-F484-460C-BFB7-73E1CA24FE66}
+		{4AD7E177-B029-468F-9C10-00127ACBDC6F} = {4AD7E177-B029-468F-9C10-00127ACBDC6F}
+		{E2D337A2-F24E-4444-8A72-0DD2416D74B3} = {E2D337A2-F24E-4444-8A72-0DD2416D74B3}
+	EndProjectSection
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "SubDyn.Presentation", "SubDyn.Presentation\SubDyn.Presentation.fsproj", "{FEC73236-7736-4029-9726-5A76A972B534}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "SubDyn.Simulator", "SubDyn.Simulator\SubDyn.Simulator.fsproj", "{E2D337A2-F24E-4444-8A72-0DD2416D74B3}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "SubDyn.Math", "SubDyn.Math\SubDyn.Math.fsproj", "{4AD7E177-B029-468F-9C10-00127ACBDC6F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{48856F50-F484-460C-BFB7-73E1CA24FE66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48856F50-F484-460C-BFB7-73E1CA24FE66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48856F50-F484-460C-BFB7-73E1CA24FE66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48856F50-F484-460C-BFB7-73E1CA24FE66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79473582-E7D2-4153-BFD8-CA84A651B195}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79473582-E7D2-4153-BFD8-CA84A651B195}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79473582-E7D2-4153-BFD8-CA84A651B195}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79473582-E7D2-4153-BFD8-CA84A651B195}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEC73236-7736-4029-9726-5A76A972B534}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEC73236-7736-4029-9726-5A76A972B534}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEC73236-7736-4029-9726-5A76A972B534}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEC73236-7736-4029-9726-5A76A972B534}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2D337A2-F24E-4444-8A72-0DD2416D74B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2D337A2-F24E-4444-8A72-0DD2416D74B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2D337A2-F24E-4444-8A72-0DD2416D74B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2D337A2-F24E-4444-8A72-0DD2416D74B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AD7E177-B029-468F-9C10-00127ACBDC6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AD7E177-B029-468F-9C10-00127ACBDC6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AD7E177-B029-468F-9C10-00127ACBDC6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AD7E177-B029-468F-9C10-00127ACBDC6F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

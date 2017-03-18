@@ -1,0 +1,32 @@
+{VERSION 6 0 "IBM INTEL NT" "6.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 1 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 
+0 0 1 }{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 1 }
+{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 
+2 2 1 1 1 1 }1 1 0 0 0 0 1 0 1 0 2 2 0 1 }{PSTYLE "Maple Output" -1 
+11 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 1 1 1 }3 3 0 
+0 0 0 1 0 1 0 2 2 0 1 }}
+{SECT 0 {EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 72 "restart:\na:=evalf(1
+18.5);\nb:=evalf(16.15);\nc:=evalf(42145/(4/3*Pi*a*b));" }}{PARA 11 "
+" 1 "" {XPPMATH 20 "6#>%\"aG$\"%&=\"!\"\"" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%\"bG$\"%:;!\"#" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%
+\"cG$\"+UhMd_!\"*" }}}{PARA 11 "" 1 "" {TEXT -1 0 "" }}{EXCHG {PARA 0 
+"> " 0 "" {MPLTEXT 1 0 227 "A0:=a*b*c*int(1/((a^2+x)*sqrt((a^2 + x)*(b
+^2 + x)*(c^2+x))), x=0..1000000);\nB0:=a*b*c*int(1/((b^2+x)*sqrt((a^2 \+
++ x)*(b^2 + x)*(c^2+x))), x=0..1000000);\nC0:=a*b*c*int(1/((c^2+x)*sqr
+t((a^2 + x)*(b^2 + x)*(c^2+x))), x=0..1000000);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%#A0G$\"+(R2[d#!#6" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#
+>%#B0G$\"+Bcg(z%!#5" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#C0G$\"+$QrW
+\\\"!\"*" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 9 "A0+B0+C0;" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#$\"+>+)***>!\"*" }}}{EXCHG {PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 263 "k11:=A0/(2-A0);\nk22:=B0/(2-B0);\nk33:=C0/(2-
+C0);\nk44:=(b^2-c^2)^2*(C0-B0)/(2*(b^2-c^2)+(B0-C0)*(b^2 + c^2))/(b^2 \+
++ c^2);\nk55:=(c^2-a^2)^2*(A0-C0)/(2*(c^2-a^2)+(C0-A0)*(c^2 + a^2))/(c
+^2 + a^2);\nk66:=(a^2-b^2)^2*(B0-A0)/(2*(a^2-b^2)+(A0-B0)*(a^2 + b^2))
+/(a^2 + b^2);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$k11G$\"+SR>/8!#6" 
+}}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$k22G$\"+oB#e:$!#5" }}{PARA 11 "" 
+1 "" {XPPMATH 20 "6#>%$k33G$\"+lZDcH!\"*" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6#>%$k44G$\"+lXS,6!\"*" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$k55G$
+\"+iJ,%y#!\"*" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$k66G$\"+XxThG!#5" 
+}}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 0 "" }}}}{MARK "2 0 0" 2 }
+{VIEWOPTS 1 1 0 1 1 1803 1 1 1 1 }{PAGENUMBERS 0 1 2 33 1 1 }

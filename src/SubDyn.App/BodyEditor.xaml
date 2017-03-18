@@ -1,0 +1,184 @@
+﻿<Window x:Class="SubDyn.App.BodyEditor"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Title="Редактор параметров корпуса" 
+    SizeToContent="WidthAndHeight" 
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterOwner">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TabControl Name="tabControl" Margin="8,8,8,4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TabStripPlacement="Left">
+            <TabItem Header="Корпус">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Margin="8,8,4,4">Имя файла:</TextBlock>
+                    <TextBlock Name="bodyFileName" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Margin="4,8,8,4" />
+
+                    <TextBox Name="bodyName" Grid.Row="1" Grid.ColumnSpan="2" Height="23" HorizontalAlignment="Stretch" Margin="8,4,4,4"
+                             Text="Введите название корпуса" TabIndex="0" GotFocus="bodyName_GotFocus" LostFocus="bodyName_LostFocus" />
+
+                    <TextBlock Grid.Row="2" Grid.ColumnSpan="2"                     
+                               HorizontalAlignment="Stretch" Margin="8,4,4,4" VerticalAlignment="Center" FontWeight="Normal" Background="DarkGray" Foreground="White" 
+                               Padding="4" Height="23" TextAlignment="Left">Параметры корпуса</TextBlock>
+
+                    <TextBlock Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="8,0,0,0">Длина корпуса (в метрах)</TextBlock>
+                    <TextBox Name="bodyLength" Grid.Column="2" Grid.Row="3" Height="23" Margin="4,4,8,4" TabIndex="3" />
+
+                    <TextBlock Grid.Row="4" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="8,0,0,0">Ширина корпуса (в метрах)</TextBlock>
+                    <TextBlock Grid.Row="5" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="8,0,0,0">Высота корпуса (в метрах)</TextBlock>
+                    <TextBox Name="bodyWidth" Grid.Column="2" Grid.Row="4" Height="23" Margin="4,4,8,4" TabIndex="4" />
+                    <TextBox Name="bodyHeight" Grid.Column="2" Grid.Row="5" Height="23" Margin="4,4,8,4" TabIndex="5" />
+
+                    <TextBlock Grid.Row="6" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="8,4,4,8">Объем корпуса (в метрах кубических)</TextBlock>
+                    <TextBox Name="bodyVolume" Grid.Column="2" Grid.Row="6" Height="23" Margin="4,4,8,8" TabIndex="6" />
+                    <Button Grid.Column="2" Content="Открыть" Height="23" Margin="4,4,8,4" Name="openBody" Width="75" Grid.Row="1" Click="openBody_Click" TabIndex="1" />
+                    <Button Grid.Column="2" Content="Сохранить" Height="23" Margin="4,4,8,4" Name="saveBody" Width="75" Grid.Row="2" Click="saveBody_Click" TabIndex="2" />
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Присоединенные массы" Name="tabItem2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    
+                    <TextBlock Grid.ColumnSpan="6" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="8,8,8,0" FontWeight="Normal" 
+                               Background="DarkGray" Foreground="White" Padding="4" Height="23">Матрица присоединенных масс корпуса</TextBlock>
+
+                    <TextBox Name="k11" Grid.Row="1" Grid.Column="0" Height="23" Margin="8,0,0,0" TabIndex="9"  ToolTip="k11" />
+                    <TextBox Name="k21" Grid.Row="2" Grid.Column="0" Height="23" Margin="8,0,0,0" TabIndex="20" ToolTip="k21" />
+                    <TextBox Name="k31" Grid.Row="3" Grid.Column="0" Height="23" Margin="8,0,0,0" TabIndex="25" ToolTip="k31" />
+                    <TextBox Name="k41" Grid.Row="4" Grid.Column="0" Height="23" Margin="8,0,0,0" TabIndex="30" ToolTip="k41" />
+                    <TextBox Name="k51" Grid.Row="5" Grid.Column="0" Height="23" Margin="8,0,0,0" TabIndex="35" ToolTip="k51" />
+                    <TextBox Name="k61" Grid.Row="6" Grid.Column="0" Height="23" Margin="8,0,0,4" TabIndex="40" ToolTip="k61" />
+
+                    <TextBox Name="k12" Grid.Row="1" Grid.Column="1" Height="23" TabIndex="15" ToolTip="k12" />
+                    <TextBox Name="k22" Grid.Row="2" Grid.Column="1" Height="23" TabIndex="10" ToolTip="k22" />
+                    <TextBox Name="k32" Grid.Row="3" Grid.Column="1" Height="23" TabIndex="26" ToolTip="k32" />
+                    <TextBox Name="k42" Grid.Row="4" Grid.Column="1" Height="23" TabIndex="31" ToolTip="k42" />
+                    <TextBox Name="k52" Grid.Row="5" Grid.Column="1" Height="23" TabIndex="36" ToolTip="k52" />
+                    <TextBox Name="k62" Grid.Row="6" Grid.Column="1" Height="23" Margin="0,0,0,4" TabIndex="41" ToolTip="k62" />
+
+                    <TextBox Name="k13" Grid.Row="1" Grid.Column="2" Height="23" TabIndex="16" ToolTip="k13" />
+                    <TextBox Name="k23" Grid.Row="2" Grid.Column="2" Height="23" TabIndex="21" ToolTip="k23" />
+                    <TextBox Name="k33" Grid.Row="3" Grid.Column="2" Height="23" TabIndex="11" ToolTip="k33" />
+                    <TextBox Name="k43" Grid.Row="4" Grid.Column="2" Height="23" TabIndex="32" ToolTip="k43" />
+                    <TextBox Name="k53" Grid.Row="5" Grid.Column="2" Height="23" TabIndex="37" ToolTip="k53" />
+                    <TextBox Name="k63" Grid.Row="6" Grid.Column="2" Height="23" Margin="0,0,0,4" TabIndex="42" ToolTip="k63" />
+
+                    <TextBox Name="k14" Grid.Row="1" Grid.Column="3" Height="23" TabIndex="17" ToolTip="k14" />
+                    <TextBox Name="k24" Grid.Row="2" Grid.Column="3" Height="23" TabIndex="22" ToolTip="k24" />
+                    <TextBox Name="k34" Grid.Row="3" Grid.Column="3" Height="23" TabIndex="27" ToolTip="k34" />
+                    <TextBox Name="k44" Grid.Row="4" Grid.Column="3" Height="23" TabIndex="12" ToolTip="k44" />
+                    <TextBox Name="k54" Grid.Row="5" Grid.Column="3" Height="23" TabIndex="38" ToolTip="k54" />
+                    <TextBox Name="k64" Grid.Row="6" Grid.Column="3" Height="23" Margin="0,0,0,4" TabIndex="43" ToolTip="k64" />
+
+                    <TextBox Name="k15" Grid.Row="1" Grid.Column="4" Height="23" TabIndex="18" ToolTip="k15" />
+                    <TextBox Name="k25" Grid.Row="2" Grid.Column="4" Height="23" TabIndex="23" ToolTip="k25" />
+                    <TextBox Name="k35" Grid.Row="3" Grid.Column="4" Height="23" TabIndex="28" ToolTip="k35" />
+                    <TextBox Name="k45" Grid.Row="4" Grid.Column="4" Height="23" TabIndex="33" ToolTip="k45" />
+                    <TextBox Name="k55" Grid.Row="5" Grid.Column="4" Height="23" TabIndex="13" ToolTip="k55" />
+                    <TextBox Name="k65" Grid.Row="6" Grid.Column="4" Height="23" Margin="0,0,0,4" TabIndex="44" ToolTip="k65" />
+
+                    <TextBox Name="k16" Grid.Row="1" Grid.Column="5" Height="23" Margin="0,0,8,0" TabIndex="19" ToolTip="k16" />
+                    <TextBox Name="k26" Grid.Row="2" Grid.Column="5" Height="23" Margin="0,0,8,0" TabIndex="24" ToolTip="k26" />
+                    <TextBox Name="k36" Grid.Row="3" Grid.Column="5" Height="23" Margin="0,0,8,0" TabIndex="29" ToolTip="k36" />
+                    <TextBox Name="k46" Grid.Row="4" Grid.Column="5" Height="23" Margin="0,0,8,0" TabIndex="34" ToolTip="k46" />
+                    <TextBox Name="k56" Grid.Row="5" Grid.Column="5" Height="23" Margin="0,0,8,0" TabIndex="39" ToolTip="k56" />
+                    <TextBox Name="k66" Grid.Row="6" Grid.Column="5" Height="23" Margin="0,0,8,4" TabIndex="14" ToolTip="k66" />
+                    
+                    <StackPanel Grid.Row="7" Grid.ColumnSpan="6" Orientation="Horizontal">
+                        <ComboBox Name="addedMassesCalculationMethod" Height="23" HorizontalAlignment="Stretch" Margin="8,4,4,8" SelectedIndex="0" TabIndex="7">
+                            <ComboBoxItem Content="Метод эквивалентного эллипсоида" />                
+                        </ComboBox>
+                        <!--<ComboBox Name="addedMassesCalculationType" Height="23" HorizontalAlignment="Stretch" Margin="4,4,4,8" SelectedIndex="0" TabIndex="7">
+                            <ComboBoxItem Name="Dimension" Content="Размерные" />
+                            <ComboBoxItem Name="Dimensionless"  Content="Безразмерные" />
+                        </ComboBox>-->
+                        <Button Name="calculateAddedMasses" Content="Рассчитать" Height="23" HorizontalAlignment="Stretch" Margin="4,4,8,8" Width="75"  TabIndex="8" Click="calculateAddedMasses_Click" />
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Силы и моменты">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.ColumnSpan="6" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="8,8,8,4"
+                            Background="DarkGray" Foreground="White" Padding="4" Height="23">Вычисление сил и моментов на копусе</TextBlock>
+
+                    <ComboBox Name="bodyCalculationType" Grid.Row="1" Grid.ColumnSpan="6" Height="23" Margin="8,4,0,8" SelectedIndex="1" HorizontalAlignment="Left" TabIndex="45">
+                        <ComboBoxItem Content="Приближенный метод" IsEnabled="False" />
+                        <ComboBoxItem Content="Таблица коэффициентов" />
+                    </ComboBox>
+
+                    <!--<TextBox Name="Fx" Grid.Row="2" Grid.Column="0" Height="23" Margin="8,4,0,8" TabIndex="9" ToolTip="Fx" />
+                    <TextBox Name="Fy" Grid.Row="2" Grid.Column="1" Height="23" Margin="0,4,0,8" TabIndex="9" ToolTip="Fy" />
+                    <TextBox Name="Fz" Grid.Row="2" Grid.Column="2" Height="23" Margin="0,4,0,8" TabIndex="9" ToolTip="Fz" />
+                    <TextBox Name="Mx" Grid.Row="2" Grid.Column="3" Height="23" Margin="0,4,0,8" TabIndex="9" ToolTip="Mx" />
+                    <TextBox Name="My" Grid.Row="2" Grid.Column="4" Height="23" Margin="0,4,0,8" TabIndex="9" ToolTip="My" />
+                    <TextBox Name="Mz" Grid.Row="2" Grid.Column="5" Height="23" Margin="0,4,8,8" TabIndex="9" ToolTip="Mz" />
+                    -->
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+        <StackPanel Name="stackPanel" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Top" Orientation="Horizontal">
+            <Button Name="buttonOk" Height="23" Width="75" Margin="4,4,4,8" HorizontalAlignment="Right" VerticalAlignment="Bottom" TabIndex="46" IsDefault="True" Click="buttonOk_Click">ОК</Button>
+            <Button Name="buttonCancel" Height="23" Width="75" Margin="4,4,8,8" HorizontalAlignment="Right" VerticalAlignment="Bottom" TabIndex="20" IsCancel="True" Click="buttonCancel_Click">Отмена</Button>
+        </StackPanel>
+    </Grid>
+</Window>

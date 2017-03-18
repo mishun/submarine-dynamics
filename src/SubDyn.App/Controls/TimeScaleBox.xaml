@@ -1,0 +1,19 @@
+﻿<ComboBox x:Class="SubDyn.App.Controls.TimeScaleBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             Focusable="False"
+             ToolTip="Time Factor"
+             SelectionChanged="OnSelectionChanged"
+             Width="60">
+
+    <ComboBoxItem Tag="1">×1</ComboBoxItem>
+    <ComboBoxItem Tag="2">×2</ComboBoxItem>
+    <ComboBoxItem Tag="5">×5</ComboBoxItem>
+    <ComboBoxItem Tag="10">×10</ComboBoxItem>
+    <ComboBoxItem Tag="20">×20</ComboBoxItem>
+    <ComboBoxItem Tag="50">×50</ComboBoxItem>
+    <ComboBoxItem Tag="100">×100</ComboBoxItem>
+    <ComboBoxItem Tag="200">×200</ComboBoxItem>
+</ComboBox>

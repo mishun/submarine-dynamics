@@ -1,0 +1,118 @@
+﻿<Window x:Class="SubDyn.App.ManoeuvreEditor"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	Title="Редактор параметров маневра" 
+	ResizeMode="NoResize" 
+	WindowStartupLocation="CenterOwner" 
+	SizeToContent="WidthAndHeight" 
+	MaxWidth="500"
+	MaxHeight="500">
+
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+
+		<Grid Grid.Row="1">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition />
+				<ColumnDefinition Width="Auto" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+
+			<TextBlock Grid.Row="0" Margin="8,8,4,4">Имя файла:</TextBlock>
+			<TextBlock Name="manoeuvreFileName" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Margin="4,8,8,4" />
+
+			<TextBox Name="manoeuvreName" Grid.Row="1" Grid.ColumnSpan="2" Height="23" HorizontalAlignment="Stretch"
+				Margin="8,4,4,4" TabIndex="2" GotFocus="manoeuvreName_GotFocus" LostFocus="manoeuvreName_LostFocus" 
+				MaxLength="50" ToolTip="Название маневра">Введите название маневра</TextBox>
+
+            <ComboBox Name="manoeuvreType" 
+                      Grid.Row="2"
+                      Grid.Column="1"
+                      Height="23"
+                      Margin="4,4,4,4"
+                      VerticalAlignment="Top"
+                      HorizontalAlignment="Stretch"
+                      SelectedIndex="0" 
+                      TabIndex="3">
+
+                <ComboBoxItem Content="Тест y'=cos(x)" />
+                <ComboBoxItem Content="Циркуляция" />
+                <ComboBoxItem Content="Изменение глубины" />
+                <ComboBoxItem Content="Спираль" />
+            </ComboBox>
+
+            <TextBlock Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="8,4,4,4" Padding="1">Тип маневра</TextBlock>
+
+            <TextBlock Grid.Row="3" Grid.ColumnSpan="3" HorizontalAlignment="Stretch"  Margin="8,4,8,4" 
+                VerticalAlignment="Center" FontWeight="Normal" Background="DarkGray" Foreground="White" 
+                Padding="4" Height="23" TextAlignment="Left">Начальные данные</TextBlock>
+
+            <TextBlock Grid.Row="4" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="8,4,0,0">Временной отрезок:</TextBlock>
+            <TextBlock Grid.Row="5" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="8,4,4,4">Начальный момент (в секундах)</TextBlock>
+            <TextBlock Grid.Row="6" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="8,4,4,4">Конечный момент (в секундах)</TextBlock>
+            <TextBlock Grid.Row="7" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="8,4,4,4">Шаг (в секундах)</TextBlock>
+
+            <TextBox Grid.Column="2" Grid.Row="5" Height="23" HorizontalAlignment="Stretch" Margin="4,4,8,4" Name="timeStart" VerticalAlignment="Top" TabIndex="4" MaxLength="20" />
+            <TextBox Grid.Column="2" Grid.Row="6" Height="23" HorizontalAlignment="Stretch" Margin="4,4,8,4" Name="timeEnd" VerticalAlignment="Top" TabIndex="5" MaxLength="20" />
+            <TextBox Grid.Column="2" Grid.Row="7" Height="23" HorizontalAlignment="Stretch" Margin="4,4,8,4" Name="timeStep" VerticalAlignment="Top" TabIndex="6" MaxLength="20" />
+            <TextBlock Grid.Row="8" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="8,4,0,0">Скорость (в метрах в секунду):</TextBlock>
+
+            <Grid HorizontalAlignment="Stretch" Grid.ColumnSpan="3" Grid.Row="9" Margin="8,4,8,4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBox Height="23" Name="vX" Grid.Column="0" TabIndex="6" MaxLength="20" ToolTip="Проекция на ось абсцисс" />
+                <TextBox Height="23" Name="vY" Grid.Column="1" TabIndex="7" MaxLength="20" ToolTip="Проекция на ось ординат" />
+                <TextBox Height="23" Name="vZ" Grid.Column="2" TabIndex="8" MaxLength="20" ToolTip="Проекция на ось аппликат" />
+            </Grid>
+
+            <TextBlock Grid.Row="10" Grid.ColumnSpan="2" HorizontalAlignment="Left"
+                       VerticalAlignment="Top" Margin="8,4,0,0">Угловая скорость (в радианах):</TextBlock>
+
+            <Grid HorizontalAlignment="Stretch" Grid.ColumnSpan="3" Grid.Row="11" Margin="8,4,8,4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <TextBox Height="23" Name="wX" Grid.Column="0" TabIndex="9" MaxLength="20" ToolTip="Относительно оси абсцисс" />
+                <TextBox Height="23" Name="wY" Grid.Column="1" TabIndex="10" MaxLength="20" ToolTip="Относительно оси ординат" />
+                <TextBox Height="23" Name="wZ" Grid.Column="2" TabIndex="11" MaxLength="20" ToolTip="Относительно оси аппликат" />
+            </Grid>
+
+            <Button Grid.Column="2" Content="Открыть" Height="23" Margin="4,4,8,4" Name="openManoeuvre" Width="75" Grid.Row="1" TabIndex="0" Click="openManoeuvre_Click" />
+            <Button Grid.Column="2" Content="Сохранить" Height="23" Margin="4,4,8,4" Name="saveManoeuvre" Width="75" Grid.Row="2" TabIndex="1" Click="saveManoeuvre_Click" />
+
+            <StackPanel Name="stackPanel" Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="3"
+                        HorizontalAlignment="Right" VerticalAlignment="Top" Orientation="Horizontal">
+
+                <Button Name="buttonOk" Height="23" Width="75" Margin="4,4,4,8" HorizontalAlignment="Right" 
+                    VerticalAlignment="Bottom" IsDefault="True" TabIndex="12" Click="buttonOk_Click">ОК</Button>
+
+                <Button Name="buttonCancel" Height="23" Width="75" Margin="4,4,8,8" HorizontalAlignment="Right" 
+                    VerticalAlignment="Bottom" IsCancel="True" Click="buttonCancel_Click">Отмена</Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

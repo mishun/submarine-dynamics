@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<ModelData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Варшавянка</Name>
+
+  <Beam>9.9</Beam>
+  <Height>9.9</Height>
+  <Length>72.6</Length>
+  <Volume>3950</Volume>
+  <Mass>3950000</Mass>
+
+  <CenterOfMass X="0" Y="0" Z="0" />
+
+  <MomentOfInertia XX="2.708e6" XY="0" XZ="0" YX="0" YY="1.25e8" YZ="0" ZX="0" ZY="0" ZZ="1.243e8" />
+
+  <CalculatioinType>ApproximateMethod</CalculatioinType>
+</ModelData>
